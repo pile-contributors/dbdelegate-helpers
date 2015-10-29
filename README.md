@@ -1,4 +1,4 @@
-dbdelegate
+DbDelegate
 ======
 
-This is the helper repository for dbdelegate pile.
+This is the helper repository for DbDelegate pile.

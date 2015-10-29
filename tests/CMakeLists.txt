@@ -17,7 +17,7 @@ find_package(GTest REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 
 if (NOT INCLUDE_PILE_SOURCES_DIRECTLY)
-    set (DBDELEGATE_LIBRARY dbdelegate)
+    set (DBDELEGATE_LIBRARY DbDelegate)
 endif()
 
 add_executable(test_basic
