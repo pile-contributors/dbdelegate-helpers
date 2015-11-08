@@ -38,3 +38,13 @@ target_link_libraries(test_basic
 add_test(
     NAME test_basic
     COMMAND $<TARGET_FILE:test_basic>)
+
+
+add_executable(test_gui_basic
+    ${DBDELEGATE_SOURCES}
+    ${DBDELEGATE_HEADERS}
+    gui-basic.cc)
+target_link_libraries(test_gui_basic
+    ${GTEST_LIBRARIES}
+    ${DBDELEGATE_LIBRARY})
+
