@@ -20,9 +20,16 @@ if (NOT INCLUDE_PILE_SOURCES_DIRECTLY)
     set (DBDELEGATE_LIBRARY DbDelegate)
 endif()
 
-add_executable(test_basic
+set (SOURCES
     ${DBDELEGATE_SOURCES}
     ${DBDELEGATE_HEADERS}
+    ${DBMODEL_SOURCES}
+    ${DBMODEL_HEADERS}
+    ${DBSTRUCT_SOURCES}
+    ${DBSTRUCT_HEADERS})
+
+add_executable(test_basic
+    ${SOURCES}
     basic.cc)
 
 if (UNIX)
@@ -34,6 +41,7 @@ endif()
 target_link_libraries(test_basic
     ${GTEST_BOTH_LIBRARIES}
     ${DBDELEGATE_LIBRARY})
+qt5_use_modules(test_basic Widgets Sql)
 
 add_test(
     NAME test_basic
@@ -41,10 +49,9 @@ add_test(
 
 
 add_executable(test_gui_basic
-    ${DBDELEGATE_SOURCES}
-    ${DBDELEGATE_HEADERS}
+    ${SOURCES}
     gui-basic.cc)
 target_link_libraries(test_gui_basic
     ${GTEST_LIBRARIES}
     ${DBDELEGATE_LIBRARY})
-
+qt5_use_modules(test_gui_basic Widgets Sql)

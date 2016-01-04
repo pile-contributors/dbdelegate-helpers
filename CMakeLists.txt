@@ -41,10 +41,12 @@ include_directories(
     "${CMAKE_CURRENT_BINARY_DIR}"
     "${CMAKE_CURRENT_SOURCE_DIR}")
 
-find_package(Qt5 COMPONENTS Core)
+find_package(Qt5 COMPONENTS Core Sql Widgets)
 if(Qt5Core_FOUND)
     include_directories(
-         ${Qt5Core_INCLUDE_DIRS})
+         ${Qt5Core_INCLUDE_DIRS}
+         ${Qt5Sql_INCLUDE_DIRS}
+         ${Qt5Widgets_INCLUDE_DIRS})
 endif()
 
 if(INCLUDE_PILE_SOURCES_DIRECTLY)
